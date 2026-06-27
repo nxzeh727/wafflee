@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+      <title>Page Title</title>
+      <style>
+        .nanum-pen-script-regular {
+          font-family: "Nanum Pen Script", cursive;
+          font-weight: 400;
+          font-style: normal;
+        }
+      </style>
+  </head>
+  <body class="nanum-pen-script-regular" style="background-image:url(./ptoaopt.png); background-size: cover;""> 
+    <div style="display: flex; justify-content: space-around; backdrop-filter: blur(8px); border-radius: 16px; background-color: rgba(249, 242, 255,0.25);">
+      <p>
+        Potato OS
+      </p>
+      <p>
+        I WANNA STICKER :DDD
+      </p>
+      <p id="timeCurrent">
+        Time:
+      </p>
+      <img src="./EGGTART.png" style="height: 24px; margin: 12px;">
+    </div>
+
+    <div style="border: solid; border-radius: 16px;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50vw; height: 50vh;">
+      
+      <p>POTAOT :D</p>
+      
+    </div>
+    <div style="display: flex; position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);justify-content: space-around; backdrop-filter: blur(8px); border-radius: 16px;
+       background-color: rgba(249, 242, 255,0.25); gap: 10px; width: 50vw;">
+      <p>egg tart :D</p>
+    </div>
+    <script>
+      function updateTime() {
+          document.querySelector("#timeCurrent").innerHTML = new Date().toLocaleString();
+      }
+      setInterval(updateTime, 1000);
+
+    </script>
+    
+  </body>
+
+</html>
