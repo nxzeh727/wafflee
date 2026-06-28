@@ -1,0 +1,23 @@
+.nanum-pen-script-regular {
+          font-family: "Nanum Pen Script", cursive;
+          font-weight: 400;
+          font-style: normal;
+        }
+.page {
+    border-width: 8px; border-style: solid; border-color: rgba(249, 242, 255,0.5); border-radius: 16px;position: absolute; backdrop-filter: blur(8px);
+}
+
+.header {
+    display: flex; justify-content: space-between; backdrop-filter: blur(8px); background-color: rgba(249, 242, 255,0.5); padding-left: 0px;padding-right: 100px; padding-bottom: 0px
+}
+
+.appicon {
+    height: 35px; margin: 12px; border-radius: 8px; 
+}
+
+.selected {
+    border-style: solid;
+
+    border-width: 5px;
+    border-color: rgba(249, 242, 255,0.25);
+}
