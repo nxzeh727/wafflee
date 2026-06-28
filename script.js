@@ -58,12 +58,22 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 
-dragElement(document.getElementById("welcome"));
+
 
 var welcomeScreen = document.querySelector("#welcome")
 var welcomeScreenClose = document.querySelector("#welcomeclose")
 
 var welcomeScreenOpen = document.querySelector("#welcomeopen")
+
+var potatoScreen = document.querySelector("#potato")
+var potatoScreenClose = document.querySelector("#potatoclose")
+
+var potatoScreenOpen = document.querySelector("#potatoopen")
+
+var blueberryScreen = document.querySelector("#blueberry")
+var blueberryScreenClose = document.querySelector("#blueberryclose")
+
+var blueberryScreenOpen = document.querySelector("#blueberryopen")
 
 function closeWindow(element) {
   element.style.display = "none"
@@ -100,4 +110,25 @@ welcomeScreenClose.addEventListener("click", function() {
 welcomeScreenOpen.addEventListener("click", function() {
   openWindow(welcomeScreen);handleIconTap(welcomeScreenOpen);
 });
+
+
+potatoScreenClose.addEventListener("click", function() {
+  closeWindow(potatoScreen);
+});
+
+potatoScreenOpen.addEventListener("click", function() {
+  openWindow(potatoScreen);handleIconTap(potatoScreenOpen);
+});
+
+blueberryScreenClose.addEventListener("click", function() {
+  closeWindow(blueberryScreen);
+});
+
+blueberryScreenOpen.addEventListener("click", function() {
+  openWindow(blueberryScreen);handleIconTap(blueberryScreenOpen);
+});
+
+dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("potato"));
+dragElement(document.getElementById("blueberry"));
 
