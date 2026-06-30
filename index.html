@@ -30,22 +30,27 @@
       <img src="Image_20250620_152634_594.gif" style="max-height: 200px; padding: 16px; border-radius: 50px;">
       
     </div>
-    <div class="page" id="potato" style="top: 35%; left: 85%; transform: translate(-50%, -50%); width: 20vw; height: 50vh;">
+    <div class="page" id="potato" style="top: 35%; left: 85%; transform: translate(-50%, -50%); width: 25vw; height: 50vh;">
       
       <div id="potatoheader" class="header"> 
         <img src="closebutton.png" style=" max-height:40px" id="potatoclose">
-        <p>notepad</p>
       </div>
-      <div style="overflow-y: scroll; padding: 16px;">
-        <p contenteditable="True">
-          <span contenteditable="true">Welcome to <strong>potato notes :)</strong></span>
+      <div style="display:flex; padding: 8px">
+        <div id="sidebar" style="flex:1">
+        <p>Select an existing note or choose a new one :)</p>
+        <div id="noteslist"></div>
+        <button class="button nanum-pen-script-regular" id="addnootes">New note</button>
 
-          <br>
-          <br>
+        </div>
+        <div>
+          <div style="overflow-y: scroll; padding: 16px; flex:3" id="notesContent">
 
-          Feel free to edit this text as you would like :D
-        </p>
+          </div>
+          <button class="button nanum-pen-script-regular" id="savenotes">Save Note :)</button>
+        </div>
+        
       </div>
+      
       
     </div>
     <div class="page" id="blueberry" style="top: 75%; left: 25%; transform: translate(-50%, -50%); width: 30vw; height: 20vh;">

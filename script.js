@@ -95,3 +95,95 @@ function initializeWindow(id) {
 
 ["welcome", "potato", "blueberry"].forEach(initializeWindow);
 
+
+var content = [
+  {
+    title: "Welcome :D",
+    date: '6/28/26',
+    content: `
+        <div contenteditable="True">
+          <span contenteditable="true">Welcome to <strong>potato notes :)</strong></span>
+
+          <br>
+          <br>
+
+          Feel free to edit this text as you would like :D
+        </div>`
+  }
+]
+
+function setNotesContent(index) {
+
+  var notesContent = document.querySelector("#notesContent")
+
+  notesContent.innerHTML = `<p contenteditable="true" id="title">${content[index].title}</p>
+  <p id="date">${content[index].date}</p>
+  <div contenteditable="true" id="content">${content[index].content}</div>`
+  notesContent.dataset.index = String(index);
+}
+
+
+
+function loadSideBar() {
+  var notesList = document.querySelector("#noteslist");
+  notesList.innerHTML = "";
+	var sidebar = document.querySelector("#sidebar");
+  for (let i = 0; i < content.length; i++) {
+    let button = document.createElement("button");
+    button.innerHTML = content[i].title;
+    button.classList.add("button")
+    button.onclick = function () {
+      setNotesContent(i);
+    };
+
+    notesList.appendChild(button);
+
+  }
+  
+}
+
+function addNotes() {
+  var notesContent = document.querySelector("#notesContent");
+  const date = new Date();
+  notesContent.innerHTML = `
+    <p contenteditable="true" id="title">Untitled document</p>
+    <p contenteditable="true" id="date">${date.toLocaleDateString()}</p>
+    <div contenteditable="true" id="content">
+
+      Feel free to edit this text as you would like :D
+    </div>`;
+  const title = document.getElementById("title");
+  const datee = document.getElementById("date");
+  const conteent = document.getElementById("content");
+  content.push({
+      title: title.innerHTML,
+      date: datee.innerHTML,
+      content: conteent.innerHTML
+  })
+
+  loadSideBar();
+  setNotesContent(content.length - 1);
+}
+
+function saveContent() {
+  const title = document.getElementById("title");
+  const datee = document.getElementById("date");
+  const conteent = document.getElementById("content");
+  var notesContent = document.getElementById("notesContent")
+  let indexx = parseInt(notesContent.dataset.index, 10);
+  content[indexx] = {
+    title: title.innerHTML,
+    date: datee.innerHTML,
+    content: conteent.innerHTML,
+  }
+  loadSideBar();
+  setNotesContent(indexx);
+
+}
+
+const addnootes = document.getElementById("addnootes")
+const savenotes = document.getElementById("savenotes")
+addnootes.addEventListener("click", () => addNotes());
+savenotes.addEventListener("click", () => saveContent());
+loadSideBar();
+setNotesContent(0);
